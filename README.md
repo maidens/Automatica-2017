@@ -1,5 +1,5 @@
 # Automatica-2017
-Jupyter notebooks with Julia code to reproduce figures from the paper "Symmetry reduction for dynamic programming" by John Maidens, Axel Barrau, Silvere Bonnabel, and Murat Arcak, submitted to Automatica as a brief paper.
+Jupyter notebooks with Julia code to reproduce figures from the paper "Symmetry reduction for dynamic programming" by John Maidens, Axel Barrau, Silvere Bonnabel, and Murat Arcak, submitted to Automatica.
 
 This software has been tested in Julia version 0.5.0 with the following packages installed: 
  - Cairo                         0.2.35
