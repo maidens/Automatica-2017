@@ -147,7 +147,8 @@ function dp_rollout_reduced_stochastic(J, x0::Array{Float64, 1}, f::Function, ph
         V = interpolate(xgrid, reshape(slicedim(J, length(xgrid_length_tuple)+1, k), xgrid_length_tuple), Gridded(Linear()))
         V = extrapolate(V, -Inf) # ensures that V returns -Inf if x is outside bounds
         u[:, k] = step_u_reduced(k, x[:, k], ugrid, theta0, V, f, phi, rho)
-        x[:, k+1] = f(k, x[:, k], u[:, k], theta0) + sigma*randn(size(x[:, k+1]))
+        n = [0; 0; sigma*randn(1); 0; 0; sigma*randn(1)] # define noise 
+        x[:, k+1] = f(k, x[:, k], u[:, k], theta0) + n
     end
     return x, u
 end
